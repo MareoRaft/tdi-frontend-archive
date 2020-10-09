@@ -5,9 +5,8 @@ This is the repo for the **frontend** of the Tennis Capstone Project for TDI (Th
 ## Run
 You may need to do `export PORT=5001`.  Environment variables in `.env` should apply automatically.
 
-    heroku local
-    # or
-    npm start
+    npm run dev
+    # do NOT do `heroku local`, since that would run the start command, which is now reserved for production build
 
 
 
