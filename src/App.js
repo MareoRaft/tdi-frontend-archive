@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import logo from './logo.svg'
 import './App.css'
-import Iframe from './components/reusable/Iframe'
+import Chart from './components/Chart'
 const STAT_TYPES = ['open', 'high', 'low', 'close']
 
 const renderCheckbox = (stat, statsToDisplay, handleCheckboxClick) => {
@@ -106,7 +106,7 @@ function App() {
           fetch stock data
         </button>
         <br/>
-        <Iframe {...{
+        <Chart {...{
           url: url,
         }}/>
       </header>
