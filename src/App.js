@@ -108,7 +108,7 @@ function App() {
           fetch stock data
         </button>
         <br/>
-        <MyChart {...{
+        <ForceDirectedTree {...{
           url: url,
         }}/>
       </header>
