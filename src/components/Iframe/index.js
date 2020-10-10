@@ -1,3 +1,3 @@
-import Iframe from './Iframe';
+import Component from './Iframe';
 
-export default Iframe;
+export default Component;
