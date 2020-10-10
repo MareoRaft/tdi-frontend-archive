@@ -5,6 +5,8 @@ import _ from 'lodash'
 import logo from './logo.svg'
 import './App.css'
 import Chart from './components/Chart'
+import MyChart from './components/MyChart'
+import ForceDirectedTree from './components/ForceDirectedTree'
 const STAT_TYPES = ['open', 'high', 'low', 'close']
 
 const renderCheckbox = (stat, statsToDisplay, handleCheckboxClick) => {
@@ -106,7 +108,7 @@ function App() {
           fetch stock data
         </button>
         <br/>
-        <Chart {...{
+        <MyChart {...{
           url: url,
         }}/>
       </header>
