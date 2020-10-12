@@ -6,27 +6,9 @@ import logo from './logo.svg'
 import './App.css'
 import Chart from './components/Chart'
 import MyChart from './components/MyChart'
+import RadialBarChart from './components/RadialBarChart'
 import ForceDirectedTree from './components/ForceDirectedTree'
 const STAT_TYPES = ['open', 'high', 'low', 'close']
-
-const renderCheckbox = (stat, statsToDisplay, handleCheckboxClick) => {
-  return <div>
-    <input
-      type="checkbox"
-      id={stat}
-      name={stat}
-      checked={statsToDisplay.has(stat)}
-      onChange={() => handleCheckboxClick(stat)}
-    />
-    <label for={stat}>
-      {stat} price
-    </label>
-  </div>
-}
-
-const renderCheckboxes = (statsToDisplay, handleCheckboxClick) => {
-  return STAT_TYPES.map((stat) => renderCheckbox(stat, statsToDisplay, handleCheckboxClick))
-}
 
 
 function App() {
@@ -91,24 +73,8 @@ function App() {
         </ul>
       </div>
       <header className="App-header">
-        Ticker symbol:
-        <input
-          type='text'
-          value={tickerInput}
-          onChange={handleChangeTickerInput}
-        />
-        <br/>
-        {renderCheckboxes(statsToDisplay, handleCheckboxClick)}
-        <br/>
-        <button
-          type='button'
-          className='click-button'
-          onClick={handleButtonClick}
-        >
-          fetch stock data
-        </button>
-        <br/>
-        <ForceDirectedTree {...{
+        Welcome to this app.
+        <RadialBarChart {...{
           url: url,
         }}/>
       </header>
