@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 import {FaAlignRight} from 'react-icons/fa'
-import _ from 'lodash'
 
-import logo from './logo.svg'
 import './App.css'
-import Chart from './components/Chart'
-import MyChart from './components/MyChart'
-import RadialBarChart from './components/RadialBarChart'
-import ForceDirectedTree from './components/ForceDirectedTree'
+// import Chart from './components/Chart'
+// import MyChart from './components/MyChart'
+// import ForceDirectedTree from './components/ForceDirectedTree'
+import PlayerRankChart from './components/PlayerRankChart'
 const STAT_TYPES = ['open', 'high', 'low', 'close']
 
 
@@ -20,27 +18,6 @@ function App() {
   // change handlers
   const handleToggleNav = () => {
     setIsNavBarOpen(!isNavBarOpen)
-  }
-  const handleChangeTickerInput = (event) => {
-    setTickerInput(event.target.value)
-  }
-  const handleButtonClick = (event) => {
-    const base_url = process.env['REACT_APP_BACKEND_URL']
-    const stat_param_strings = STAT_TYPES.map((stat) => `${stat}=${statsToDisplay.has(stat)}`)
-    const stat_param_string = stat_param_strings.join('&')
-    const new_url = `${base_url}?ticker=${tickerInput}&${stat_param_string}`
-    setUrl(new_url)
-  }
-  const handleCheckboxClick = (stat) => {
-    let stats_to_display = _.clone(statsToDisplay)
-    // toggle the stat that they clicked
-    if (stats_to_display.has(stat)) {
-      stats_to_display.delete(stat)
-    }
-    else {
-      stats_to_display.add(stat)
-    }
-    setStatsToDisplay(stats_to_display)
   }
   return (
     <div className="App">
@@ -74,7 +51,7 @@ function App() {
       </div>
       <header className="App-header">
         Welcome to this app.
-        <RadialBarChart {...{
+        <PlayerRankChart {...{
           url: url,
         }}/>
       </header>

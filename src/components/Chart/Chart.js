@@ -34,7 +34,7 @@ class Chart extends React.Component {
 		let dateAxis = chart.xAxes.push(new am4charts.DateAxis())
 		dateAxis.renderer.minGridDistance = 60
 
-		let valueAxis = chart.yAxes.push(new am4charts.ValueAxis())
+		chart.yAxes.push(new am4charts.ValueAxis())
 
 		let series = chart.series.push(new am4charts.LineSeries())
 		series.dataFields.valueY = 'value'
