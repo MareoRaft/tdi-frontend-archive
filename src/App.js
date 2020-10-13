@@ -52,8 +52,6 @@ function App() {
       </div>
       <header className="App-header">
         Welcome to this app.
-        <PlayerRankChart {...{
-        }}/>
         <PlayerRankControls {...{
         }}/>
       </header>
