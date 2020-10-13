@@ -5,11 +5,7 @@ import {
 } from '@material-ui/core'
 import {ExpandMore} from '@material-ui/icons'
 
-const MinimalSelect = () => {
-  const [val, setVal] = useState(0)
-  const handleChange = (event) => {
-    setVal(event.target.value)
-  }
+const MinimalSelect = (props) => {
   const minimalSelectClasses = useMinimalSelectStyles()
   const iconComponent = (props) => {
     return (
@@ -39,12 +35,12 @@ const MinimalSelect = () => {
         classes={{ root: minimalSelectClasses.select }}
         MenuProps={menuProps}
         IconComponent={iconComponent}
-        value={val}
-        onChange={handleChange}
+        value={props.value}
+        onChange={props.onChange}
       >
-        <MenuItem value={0}>head-to-head</MenuItem>
-        <MenuItem value={1}>aces</MenuItem>
-        <MenuItem value={2}>points won</MenuItem>
+        {props.values.map((v) =>
+          <MenuItem value={v}>{v}</MenuItem>
+        )}
       </Select>
     </>
   );

@@ -9,7 +9,7 @@ import MinimalSelect from '../MinimalSelect'
 function PlayerRankControls() {
 	// set state
   const [updateNum, setUpdateNum] = useState(1)
-  const [stat, updateStat] = useState('aces')
+  const [stat, setStat] = useState('aces')
   // create handlers
   const handleClick = () => {
   	// Increment the update num, triggering the chart to update
@@ -18,13 +18,20 @@ function PlayerRankControls() {
   const handleChange = () => {
     console.log('selected something')
   }
+  const handleChangeStat = (event) => {
+    setStat(event.target.value)
+  }
   // return rendered stuff
 	return (
     <>
       <div>
         I am controls
       </div>
-      <MinimalSelect/>
+      <MinimalSelect {...{
+        onChange: handleChangeStat,
+        value: stat,
+        values: ['aces', 'head-to-head', 'points won'],
+      }}/>
       <Button variant="contained" color="primary" size='large' disableElevation>
         Crunch Data
       </Button>
