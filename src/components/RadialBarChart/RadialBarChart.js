@@ -75,7 +75,7 @@ class Component extends React.Component {
 		return (
 			<div
 				id='chartdiv'
-				style={{width: '100%', height: '500px'}}
+				style={{width: '100%', height: '100%'}}
 				onClick={this.props.onClick}
 			>
 			</div>

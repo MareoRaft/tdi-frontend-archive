@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
+import classes from './PlayerRank.module.css'
 import PlayerRankChart from '../PlayerRankChart'
 import PlayerRankControls from '../PlayerRankControls'
 
@@ -34,16 +36,20 @@ function PlayerRank() {
   // return rendered stuff
 	return (
     <>
-      <PlayerRankChart {...{
-        data,
-      }}/>
-      <PlayerRankControls {...{
-        stat,
-        onChangeStat: handleChangeStat,
-        limit,
-        onChangeLimit: handleChangeLimit,
-        onSubmit: fetchData,
-      }}/>
+      <div className={classNames(classes.split, classes.left)}>
+        <PlayerRankChart {...{
+          data,
+        }}/>
+      </div>
+      <div className={classNames(classes.split, classes.right)}>
+        <PlayerRankControls {...{
+          stat,
+          onChangeStat: handleChangeStat,
+          limit,
+          onChangeLimit: handleChangeLimit,
+          onSubmit: fetchData,
+        }}/>
+      </div>
     </>
 	);
 }

@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Welcome to this app.
         <PlayerRank/>
       </header>
     </div>
