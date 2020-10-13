@@ -72,9 +72,4 @@ class Chart extends React.Component {
 	}
 }
 
-Chart.propTypes = {
-	onClick: PropTypes.func,
-	char: PropTypes.string.isRequired,
-};
-
 export default Chart;
