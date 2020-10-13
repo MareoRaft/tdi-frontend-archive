@@ -6,6 +6,7 @@ import './App.css'
 // import MyChart from './components/MyChart'
 // import ForceDirectedTree from './components/ForceDirectedTree'
 import PlayerRankChart from './components/PlayerRankChart'
+import PlayerRankControls from './components/PlayerRankControls'
 const STAT_TYPES = ['open', 'high', 'low', 'close']
 
 
@@ -52,7 +53,8 @@ function App() {
       <header className="App-header">
         Welcome to this app.
         <PlayerRankChart {...{
-          url: url,
+        }}/>
+        <PlayerRankControls {...{
         }}/>
       </header>
     </div>
