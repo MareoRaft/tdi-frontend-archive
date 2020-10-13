@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import PropTypes from 'prop-types'
 
 import Chart from '../Chart'
 
@@ -20,10 +19,5 @@ function Component() {
     }}/>
 	);
 }
-
-Component.propTypes = {
-	onClick: PropTypes.func,
-	char: PropTypes.string.isRequired,
-};
 
 export default Component;
