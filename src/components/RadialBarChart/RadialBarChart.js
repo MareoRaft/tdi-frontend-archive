@@ -54,11 +54,6 @@ class Component extends React.Component {
 
 		chart.seriesContainer.zIndex = -1
 
-		chart.scrollbarX = new am4core.Scrollbar()
-		chart.scrollbarX.exportable = false
-		chart.scrollbarY = new am4core.Scrollbar()
-		chart.scrollbarY.exportable = false
-
 		chart.cursor = new am4charts.RadarCursor()
 		chart.cursor.lineY.disabled = true
 
