@@ -24,11 +24,12 @@ function PlayerRank() {
   }
   const fetchData = async () => {
     // update data
-    console.log('fetching data')
-    const response = await fetch(process.env['REACT_APP_BACKEND_URL'])
+    const url = new URL(process.env['REACT_APP_BACKEND_URL'])
+    const params = {stat, limit}
+    url.search = new URLSearchParams(params).toString()
+    const response = await fetch(url)
     const new_data = await response.json()
-    const view_data = new_data.slice(0, limit)
-    setData(view_data)
+    setData(new_data)
   }
   // return rendered stuff
 	return (
