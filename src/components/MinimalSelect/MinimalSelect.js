@@ -39,7 +39,7 @@ const MinimalSelect = (props) => {
         onChange={props.onChange}
       >
         {props.values.map((v) =>
-          <MenuItem value={v}>{v}</MenuItem>
+          <MenuItem key={v} value={v}>{v}</MenuItem>
         )}
       </Select>
     </>
