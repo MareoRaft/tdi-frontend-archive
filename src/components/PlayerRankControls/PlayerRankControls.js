@@ -20,6 +20,11 @@ function PlayerRankControls(props) {
         value: props.stat,
         values: ['aces', 'head-to-head', 'points won'],
       }}/>
+      <MinimalSelect {...{
+        onChange: props.onChangeLimit,
+        value: props.limit,
+        values: [3, 5, 8, 14, 23],
+      }}/>
       <Button {...{
         variant: 'contained',
         color: 'primary',

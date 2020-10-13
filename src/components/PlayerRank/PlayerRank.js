@@ -19,6 +19,9 @@ function PlayerRank() {
   const handleChangeStat = (event) => {
     setStat(event.target.value)
   }
+  const handleChangeLimit = (event) => {
+    setLimit(event.target.value)
+  }
   const fetchData = async () => {
     // update data
     console.log('fetching data')
@@ -36,6 +39,8 @@ function PlayerRank() {
       <PlayerRankControls {...{
         stat,
         onChangeStat: handleChangeStat,
+        limit,
+        onChangeLimit: handleChangeLimit,
         onSubmit: fetchData,
       }}/>
     </>
