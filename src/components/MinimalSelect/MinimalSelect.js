@@ -4,6 +4,20 @@ import {
   Select, MenuItem, InputLabel,
 } from '@material-ui/core'
 import {ExpandMore} from '@material-ui/icons'
+import _ from 'lodash'
+
+const renderMenuItems = (values) => {
+  if (Array.isArray(values)) {
+    return values.map((v) =>
+      <MenuItem key={v} value={v}>{v}</MenuItem>
+    )
+  }
+  else {
+    return _.map(values, (v,k) =>
+      <MenuItem key={k} value={k}>{v}</MenuItem>
+    )
+  }
+}
 
 const MinimalSelect = (props) => {
   const minimalSelectClasses = useMinimalSelectStyles()
@@ -38,9 +52,7 @@ const MinimalSelect = (props) => {
         value={props.value}
         onChange={props.onChange}
       >
-        {props.values.map((v) =>
-          <MenuItem key={v} value={v}>{v}</MenuItem>
-        )}
+        {renderMenuItems(props.values)}
       </Select>
     </>
   );

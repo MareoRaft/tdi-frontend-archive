@@ -18,7 +18,10 @@ function PlayerRankControls(props) {
       <MinimalSelect {...{
         onChange: props.onChangeStat,
         value: props.stat,
-        values: ['aces', 'head-to-head', 'points won'],
+        values: {
+          'aces': 'aces',
+          'pagerank': 'head-to-head',
+        },
       }}/>
       <MinimalSelect {...{
         onChange: props.onChangeLimit,
