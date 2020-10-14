@@ -18,8 +18,15 @@ class Component extends React.Component {
 		const chart = am4core.create('chartdiv', am4charts.RadarChart)
 		// for initial fade-in
 		chart.hiddenState.properties.opacity = 0
-		// chart.data = data
-		chart.colors.step = 4
+		// chart colors can be controlled by list or colorSet
+		chart.colors.list = [
+		  am4core.color("#845EC2"),
+		  am4core.color("#D65DB1"),
+		  am4core.color("#FF6F91"),
+		  am4core.color("#FF9671"),
+		  am4core.color("#FFC75F"),
+		  am4core.color("#F9F871"),
+		]
 
 		const categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis())
 		categoryAxis.dataFields.category = 'category'
@@ -45,12 +52,19 @@ class Component extends React.Component {
 		valueAxis.renderer.axisFills.template.disabled = true
 		valueAxis.interactionsEnabled = false
 
-		const series1 = chart.series.push(new am4charts.RadarColumnSeries())
-		series1.columns.template.tooltipText = "{categoryY.category}: {valueX.value}"
-		series1.name = 'Series 1'
-		series1.dataFields.categoryY = 'category'
-		series1.dataFields.valueX = 'value1'
-		series1.stacked = true
+		const series = chart.series.push(new am4charts.RadarColumnSeries())
+		series.columns.template.tooltipText = "{categoryY.category}: {valueX.value}"
+		series.name = 'Series 1'
+		series.dataFields.categoryY = 'category'
+		series.dataFields.valueX = 'value1'
+		series.stacked = true
+		// Make colors change on per-column basis
+		series.columns.template.adapter.add('fill', (fill, target) => {
+		  return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : fill
+		})
+		series.columns.template.adapter.add('stroke', (stroke, target) => {
+		  return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : stroke
+		})
 
 		chart.seriesContainer.zIndex = -1
 
