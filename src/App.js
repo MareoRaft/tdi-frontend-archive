@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 import './App.css'
-import Nav from './components/Nav'
 import PlayerRank from './components/PlayerRank'
 
 function App() {

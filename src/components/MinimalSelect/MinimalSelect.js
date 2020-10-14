@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useMinimalSelectStyles } from '@mui-treasury/styles/select/minimal';
 import {
-  Select, MenuItem, InputLabel,
+  Select, MenuItem,
 } from '@material-ui/core'
 import {ExpandMore} from '@material-ui/icons'
 import _ from 'lodash'

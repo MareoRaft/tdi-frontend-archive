@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import * as am4core from '@amcharts/amcharts4/core'
 import * as am4plugins_forceDirected from '@amcharts/amcharts4/plugins/forceDirected'
 import am4themes_animated from '@amcharts/amcharts4/themes/animated'
@@ -15,7 +14,7 @@ am4core.useTheme(am4themes_animated)
 
 
 
-class Component extends React.Component {
+class ForceDirectedTree extends React.Component {
 	componentDidMount() {
 		const chart = am4core.create('chartdiv', am4plugins_forceDirected.ForceDirectedTree)
 
@@ -72,9 +71,4 @@ class Component extends React.Component {
 	}
 }
 
-Component.propTypes = {
-	onClick: PropTypes.func,
-	char: PropTypes.string.isRequired,
-};
-
-export default Component;
+export default ForceDirectedTree;

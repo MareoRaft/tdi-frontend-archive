@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import classes from './PlayerRank.module.css'
@@ -8,10 +7,6 @@ import PlayerRankControls from '../PlayerRankControls'
 
 
 function PlayerRank() {
-  React.useEffect(() => {
-    // run this immediately after rendering
-    fetchData()
-  }, [])
   // init vars
 	// set state
   const [stat, setStat] = useState('ace')
@@ -24,7 +19,7 @@ function PlayerRank() {
   const handleChangeLimit = (event) => {
     setLimit(event.target.value)
   }
-  const fetchData = async () => {
+  const fetchData = React.useCallback(async () => {
     // update data
     const url = new URL(process.env['REACT_APP_BACKEND_URL'])
     const params = {stat, limit}
@@ -32,7 +27,12 @@ function PlayerRank() {
     const response = await fetch(url)
     const new_data = await response.json()
     setData(new_data)
-  }
+  }, [stat, limit, setData])
+  // effects
+  React.useEffect(() => {
+    // run this immediately after rendering
+    fetchData()
+  }, [fetchData])
   // return rendered stuff
 	return (
     <>
