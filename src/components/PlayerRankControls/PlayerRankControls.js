@@ -23,7 +23,7 @@ function PlayerRankControls(props) {
       <MinimalSelect {...{
         onChange: props.onChangeLimit,
         value: props.limit,
-        values: [3, 5, 8, 14, 23],
+        values: [3, 5, 8, 14],
       }}/>
       <Button {...{
         variant: 'contained',

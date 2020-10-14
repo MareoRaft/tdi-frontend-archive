@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import RadialBarChart from '../RadialBarChart'
 
 const cleanName = (name) => {
-  return name.replace(/[_]/, ' ')
+  return name.replace(/[_]/g, ' ')
 }
 
 function PlayerRankChart(props) {
