@@ -5,9 +5,6 @@ import RadialBarChart from '../RadialBarChart'
 
 
 function PlayerRankChart(props) {
-  // init vars
-	// set state
-  // create handlers
   // return rendered stuff
 	return (
     <RadialBarChart {...{

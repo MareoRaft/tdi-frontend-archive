@@ -3,7 +3,7 @@ import * as am4core from '@amcharts/amcharts4/core'
 import * as am4charts from '@amcharts/amcharts4/charts'
 import am4themes_animated from '@amcharts/amcharts4/themes/animated'
 
-import data from './data'
+// import data from './data'
 
 // See for chart usage:
 // https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
@@ -18,7 +18,7 @@ class Component extends React.Component {
 		const chart = am4core.create('chartdiv', am4charts.RadarChart)
 		// for initial fade-in
 		chart.hiddenState.properties.opacity = 0
-		chart.data = data
+		// chart.data = data
 		chart.colors.step = 4
 
 		const categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis())
@@ -36,9 +36,9 @@ class Component extends React.Component {
 		const valueAxis = chart.xAxes.push(new am4charts.ValueAxis())
 		valueAxis.tooltip.disabled = true;
 		valueAxis.renderer.labels.template.horizontalCenter = "left"
+		// https://www.amcharts.com/docs/v4/concepts/axes/value-axis/
 		valueAxis.min = 0
-		// valueAxis.max = // automatic
-		valueAxis.strictMinMax = true
+		valueAxis.extraMax = 0.2
 		valueAxis.renderer.maxLabelPosition = 0.99
 		valueAxis.renderer.minGridDistance = 100
 		valueAxis.renderer.grid.template.strokeOpacity = 0.07
