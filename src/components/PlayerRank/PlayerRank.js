@@ -16,7 +16,7 @@ function PlayerRank() {
 	// set state
   const [stat, setStat] = useState('aces')
   const [limit, setLimit] = useState(5)
-  const [data, setData] = useState([{category:'', value1:0}])
+  const [data, setData] = useState([{category:'', value:0}])
   // create handlers
   const handleChangeStat = (event) => {
     setStat(event.target.value)

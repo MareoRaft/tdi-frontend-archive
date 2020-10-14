@@ -56,7 +56,7 @@ class Component extends React.Component {
 		series.columns.template.tooltipText = "{categoryY.category}: {valueX.value}"
 		series.name = 'Series 1'
 		series.dataFields.categoryY = 'category'
-		series.dataFields.valueX = 'value1'
+		series.dataFields.valueX = 'value'
 		series.stacked = true
 		// Make colors change on per-column basis
 		series.columns.template.adapter.add('fill', (fill, target) => {
