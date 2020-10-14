@@ -19,7 +19,10 @@ function PlayerRankControls(props) {
         onChange: props.onChangeStat,
         value: props.stat,
         values: {
-          'aces': 'aces',
+          'ace': 'aces',
+          'ptWin': 'points won',
+          'svcPtWin': 'service points won',
+          'dblFault': 'double faults',
           'pagerank': 'head-to-head',
         },
       }}/>
