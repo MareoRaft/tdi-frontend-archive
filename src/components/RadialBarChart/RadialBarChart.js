@@ -19,21 +19,20 @@ class Component extends React.Component {
 		// for initial fade-in
 		chart.hiddenState.properties.opacity = 0
 		// chart colors can be controlled by list or colorSet
-		chart.colors.list = [
-		  am4core.color("#845EC2"),
-		  am4core.color("#D65DB1"),
-		  am4core.color("#FF6F91"),
-		  am4core.color("#FF9671"),
-		  am4core.color("#FFC75F"),
-		  am4core.color("#F9F871"),
-		]
+		// chart.colors.list = [
+		//   am4core.color("#845EC2"),
+		//   am4core.color("#D65DB1"),
+		//   am4core.color("#FF6F91"),
+		//   am4core.color("#FF9671"),
+		//   am4core.color("#FFC75F"),
+		//   am4core.color("#F9F871"),
+		// ]
 
 		const categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis())
 		categoryAxis.dataFields.category = 'category'
 		categoryAxis.renderer.labels.template.location = 0.5
 		categoryAxis.renderer.labels.template.horizontalCenter = 'right'
 		categoryAxis.renderer.grid.template.location = 0
-		categoryAxis.renderer.tooltipLocation = 0.5
 		categoryAxis.renderer.grid.template.strokeOpacity = 0.07
 		categoryAxis.renderer.axisFills.template.disabled = true
 		categoryAxis.interactionsEnabled = false
@@ -53,18 +52,17 @@ class Component extends React.Component {
 		valueAxis.interactionsEnabled = false
 
 		const series = chart.series.push(new am4charts.RadarColumnSeries())
-		series.columns.template.tooltipText = "{categoryY.category}: {valueX.value}"
 		series.name = 'Series 1'
 		series.dataFields.categoryY = 'category'
 		series.dataFields.valueX = 'value'
 		series.stacked = true
-		// Make colors change on per-column basis
-		series.columns.template.adapter.add('fill', (fill, target) => {
-		  return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : fill
-		})
-		series.columns.template.adapter.add('stroke', (stroke, target) => {
-		  return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : stroke
-		})
+		// // Make colors change on per-column basis
+		// series.columns.template.adapter.add('fill', (fill, target) => {
+		//   return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : fill
+		// })
+		// series.columns.template.adapter.add('stroke', (stroke, target) => {
+		//   return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : stroke
+		// })
 
 		chart.seriesContainer.zIndex = -1
 
