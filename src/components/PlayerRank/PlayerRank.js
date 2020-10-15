@@ -4,15 +4,16 @@ import classNames from 'classnames'
 import classes from './PlayerRank.module.css'
 import PlayerRankChart from '../PlayerRankChart'
 import PlayerRankControls from '../PlayerRankControls'
+import gc from '../../global-constants'
 
 
 function PlayerRank() {
   // init vars
 	// set state
-  const [stat, setStat] = useState('ace')
-  const [normalization, setNormalization] = useState('percent')
-  const [reverse, setReverse] = useState('false')
-  const [limit, setLimit] = useState(3)
+  const [stat, setStat] = useState(gc.DEFAULT_STAT)
+  const [normalization, setNormalization] = useState(gc.DEFAULT_NORMALIZATION)
+  const [reverse, setReverse] = useState(gc.DEFAULT_REVERSE)
+  const [limit, setLimit] = useState(gc.DEFAULT_LIMIT)
   const [data, setData] = useState([{category:'', value:0}])
   // create handlers
   const handleChangeStat = (event) => {
@@ -46,6 +47,9 @@ function PlayerRank() {
     <>
       <div className={classNames(classes.split, classes.left)}>
         <PlayerRankChart {...{
+          stat,
+          normalization,
+          reverse,
           data,
         }}/>
       </div>

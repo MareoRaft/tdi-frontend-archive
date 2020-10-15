@@ -4,6 +4,7 @@ import {
 } from '@material-ui/core'
 
 import MinimalSelect from '../MinimalSelect'
+import gc from '../../global-constants'
 
 
 function PlayerRankControls(props) {
@@ -18,31 +19,22 @@ function PlayerRankControls(props) {
       <MinimalSelect {...{
         onChange: props.onChangeStat,
         value: props.stat,
-        values: {
-          'ace': 'aces',
-          'ptWin': 'points won',
-          'svcPtWin': 'service points won',
-          'dblFault': 'double faults',
-          'pagerank': 'head-to-head',
-        },
+        values: gc.STAT_TO_DISPLAY_NAME,
       }}/>
       <MinimalSelect {...{
         onChange: props.onChangeNormalization,
         value: props.normalization,
-        values: {
-          'count': 'count',
-          'percent': 'percent',
-        },
+        values: gc.NORMALIZATION_TO_DISPLAY_NAME,
       }}/>
       <MinimalSelect {...{
         onChange: props.onChangeReverse,
         value: props.reverse,
-        values: ['true', 'false'],
+        values: gc.REVERSE_VALUES,
       }}/>
       <MinimalSelect {...{
         onChange: props.onChangeLimit,
         value: props.limit,
-        values: [3, 5, 8, 14],
+        values: gc.LIMIT_VALUES,
       }}/>
       <Button {...{
         variant: 'contained',

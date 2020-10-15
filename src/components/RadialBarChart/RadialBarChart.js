@@ -28,6 +28,13 @@ class Component extends React.Component {
 		//   am4core.color("#F9F871"),
 		// ]
 
+		const title = chart.titles.create()
+		title.text = 'Top players by statistic chart'
+		title.fontSize = 30
+		title.marginBottom = 0
+		title.align = 'center'
+		this.title = title
+
 		const categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis())
 		categoryAxis.dataFields.category = 'category'
 		categoryAxis.renderer.labels.template.location = 0.5
@@ -72,10 +79,10 @@ class Component extends React.Component {
 		this.chart = chart
 	}
 	componentDidUpdate(oldProps) {
-		console.log('did update')
 		if (oldProps.data !== this.props.data) {
 			console.log('new data')
 			this.chart.data = this.props.data
+			this.title.text = this.props.title
 		}
 	}
 	componentWillUnmount() {
