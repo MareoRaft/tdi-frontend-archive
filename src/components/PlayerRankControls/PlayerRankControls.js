@@ -35,6 +35,11 @@ function PlayerRankControls(props) {
         },
       }}/>
       <MinimalSelect {...{
+        onChange: props.onChangeReverse,
+        value: props.reverse,
+        values: ['true', 'false'],
+      }}/>
+      <MinimalSelect {...{
         onChange: props.onChangeLimit,
         value: props.limit,
         values: [3, 5, 8, 14],

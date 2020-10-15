@@ -10,8 +10,9 @@ function PlayerRank() {
   // init vars
 	// set state
   const [stat, setStat] = useState('ace')
-  const [normalization, setNormalization] = useState('count')
-  const [limit, setLimit] = useState(5)
+  const [normalization, setNormalization] = useState('percent')
+  const [reverse, setReverse] = useState('false')
+  const [limit, setLimit] = useState(3)
   const [data, setData] = useState([{category:'', value:0}])
   // create handlers
   const handleChangeStat = (event) => {
@@ -20,18 +21,21 @@ function PlayerRank() {
   const handleChangeNormalization = (event) => {
     setNormalization(event.target.value)
   }
+  const handleChangeReverse = (event) => {
+    setReverse(event.target.value)
+  }
   const handleChangeLimit = (event) => {
     setLimit(event.target.value)
   }
   const fetchData = React.useCallback(async () => {
     // update data
     const url = new URL(process.env['REACT_APP_BACKEND_URL'])
-    const params = {stat, normalization, limit}
+    const params = {stat, normalization, reverse, limit}
     url.search = new URLSearchParams(params).toString()
     const response = await fetch(url)
     const new_data = await response.json()
     setData(new_data)
-  }, [stat, normalization, limit, setData])
+  }, [stat, normalization, reverse, limit, setData])
   // effects
   React.useEffect(() => {
     // run this immediately after rendering
@@ -51,6 +55,8 @@ function PlayerRank() {
           onChangeStat: handleChangeStat,
           normalization,
           onChangeNormalization: handleChangeNormalization,
+          reverse,
+          onChangeReverse: handleChangeReverse,
           limit,
           onChangeLimit: handleChangeLimit,
           onSubmit: fetchData,
