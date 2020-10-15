@@ -10,11 +10,15 @@ function PlayerRank() {
   // init vars
 	// set state
   const [stat, setStat] = useState('ace')
+  const [normalization, setNormalization] = useState('count')
   const [limit, setLimit] = useState(5)
   const [data, setData] = useState([{category:'', value:0}])
   // create handlers
   const handleChangeStat = (event) => {
     setStat(event.target.value)
+  }
+  const handleChangeNormalization = (event) => {
+    setNormalization(event.target.value)
   }
   const handleChangeLimit = (event) => {
     setLimit(event.target.value)
@@ -22,12 +26,12 @@ function PlayerRank() {
   const fetchData = React.useCallback(async () => {
     // update data
     const url = new URL(process.env['REACT_APP_BACKEND_URL'])
-    const params = {stat, limit}
+    const params = {stat, normalization, limit}
     url.search = new URLSearchParams(params).toString()
     const response = await fetch(url)
     const new_data = await response.json()
     setData(new_data)
-  }, [stat, limit, setData])
+  }, [stat, normalization, limit, setData])
   // effects
   React.useEffect(() => {
     // run this immediately after rendering
@@ -45,6 +49,8 @@ function PlayerRank() {
         <PlayerRankControls {...{
           stat,
           onChangeStat: handleChangeStat,
+          normalization,
+          onChangeNormalization: handleChangeNormalization,
           limit,
           onChangeLimit: handleChangeLimit,
           onSubmit: fetchData,

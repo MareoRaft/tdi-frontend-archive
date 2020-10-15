@@ -27,6 +27,14 @@ function PlayerRankControls(props) {
         },
       }}/>
       <MinimalSelect {...{
+        onChange: props.onChangeNormalization,
+        value: props.normalization,
+        values: {
+          'count': 'count',
+          'percent': 'percent',
+        },
+      }}/>
+      <MinimalSelect {...{
         onChange: props.onChangeLimit,
         value: props.limit,
         values: [3, 5, 8, 14],
