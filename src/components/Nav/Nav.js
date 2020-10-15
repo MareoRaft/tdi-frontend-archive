@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {FaAlignRight} from 'react-icons/fa'
 
-import '../../App.css'
+import './Nav.css'
 
 function Nav(props) {
   // set states

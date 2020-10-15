@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  /* gradient 070062 010538 or similar */
+  /*background-color: #070062;*/
+  background-color: #171062;
+  /* button color #4fc3f7 or #70CDFD */
 }
 
 .App-logo {
@@ -20,6 +24,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(4px + 2vmin);
+  color: white;
 }
 
 .App-link {
@@ -34,59 +39,3 @@
     transform: rotate(360deg);
   }
 }
-
-/*navbar stuff*/
-li {
-  padding: 10px 0;
-}
-
-.nav-button {
-  font-size: 30px;
-  margin-right: 30px;
-  color: white;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  float: right;
-}
-
-.nav-bar {
-  width: 100%;
-  background-color: #111;
-  color: white;
-  padding: 10px;
-}
-
-.nav-links {
-  height: 0;
-  overflow: hidden;
-  list-style-type: none;
-  font-weight: bold;
-}
-
-.show-nav {
-  height: 120px;
-}
-
-/* if screen is large enough */
-@media screen and (min-width: 768px) {
-  .nav-button {
-    display: none;
-  }
-
-  .nav-links {
-    height: auto;
-    display: flex;
-  }
-
-  li {
-    padding: 0 15px;
-  }
-}
-
-/* button to click */
-.click-button {
-  margin: 10px;
-}
-

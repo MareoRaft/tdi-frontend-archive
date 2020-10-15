@@ -2,6 +2,8 @@ import React from 'react'
 import * as am4core from '@amcharts/amcharts4/core'
 import * as am4charts from '@amcharts/amcharts4/charts'
 import am4themes_animated from '@amcharts/amcharts4/themes/animated'
+import am4themes_material from '@amcharts/amcharts4/themes/material'
+import am4themes_dark from '@amcharts/amcharts4/themes/dark'
 
 // import data from './data'
 
@@ -10,7 +12,8 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated'
 
 // Set theme
 am4core.useTheme(am4themes_animated)
-
+am4core.useTheme(am4themes_material)
+am4core.useTheme(am4themes_dark)
 
 
 class Component extends React.Component {
@@ -63,13 +66,13 @@ class Component extends React.Component {
 		series.dataFields.categoryY = 'category'
 		series.dataFields.valueX = 'value'
 		series.stacked = true
-		// // Make colors change on per-column basis
-		// series.columns.template.adapter.add('fill', (fill, target) => {
-		//   return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : fill
-		// })
-		// series.columns.template.adapter.add('stroke', (stroke, target) => {
-		//   return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : stroke
-		// })
+		// Make colors change on per-column basis
+		series.columns.template.adapter.add('fill', (fill, target) => {
+		  return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : fill
+		})
+		series.columns.template.adapter.add('stroke', (stroke, target) => {
+		  return target.dataItem ? chart.colors.getIndex(target.dataItem.index) : stroke
+		})
 
 		chart.seriesContainer.zIndex = -1
 
