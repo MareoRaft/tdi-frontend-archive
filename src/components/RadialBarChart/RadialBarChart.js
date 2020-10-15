@@ -62,6 +62,7 @@ class Component extends React.Component {
 		valueAxis.interactionsEnabled = false
 
 		const series = chart.series.push(new am4charts.RadarColumnSeries())
+		series.columns.template.tooltipText = '{valueX.value}'
 		series.name = 'Series 1'
 		series.dataFields.categoryY = 'category'
 		series.dataFields.valueX = 'value'

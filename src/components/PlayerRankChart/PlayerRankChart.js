@@ -11,7 +11,8 @@ const getTitle = (stat, normalization, reverse) => {
   const Top = (reverse === 'true') ? 'Bottom' : 'Top'
   const percent = (normalization === 'count') ? '#' : '%'
   const aces = gc.STAT_TO_DISPLAY_NAME[stat]
-  const title = `${Top} players by ${percent} ${aces}`
+  const normalization_and_stat = (stat === 'pagerank') ? aces : `${percent} ${aces}`
+  const title = `${Top} players by ${normalization_and_stat}`
   return title
 }
 
