@@ -2,9 +2,6 @@
   "name": "tennis-frontend-tdi",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "12.18.4"
-  },
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.6",
     "@material-ui/core": "^4.11.0",
