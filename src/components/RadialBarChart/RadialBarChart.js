@@ -5,7 +5,6 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated'
 import am4themes_material from '@amcharts/amcharts4/themes/material'
 import am4themes_dark from '@amcharts/amcharts4/themes/dark'
 
-// import data from './data'
 
 // See for chart usage:
 // https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
@@ -84,7 +83,8 @@ class Component extends React.Component {
 	}
 	componentDidUpdate(oldProps) {
 		if (oldProps.data !== this.props.data) {
-			console.log('new data')
+			console.log('new data:')
+			console.log(this.props.data)
 			this.chart.data = this.props.data
 			this.title.text = this.props.title
 		}

@@ -4,6 +4,8 @@
   /*background-color: #070062;*/
   background-color: #171062;
   /* button color #4fc3f7 or #70CDFD */
+  /* filter an entire element with filter: blue */
+  /*filter: blur(0px);*/
 }
 
 .App-logo {
