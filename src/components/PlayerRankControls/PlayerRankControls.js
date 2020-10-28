@@ -1,14 +1,8 @@
 import React, {useState} from 'react'
-import classNames from 'classnames'
-import _ from 'lodash'
 import {
   Button,
   IconButton,
 } from '@material-ui/core'
-import {
-  Close,
-  Info,
-} from '@material-ui/icons'
 
 import classes from './PlayerRankControls.module.css'
 import MinimalSelect from '../MinimalSelect'
@@ -48,7 +42,7 @@ function PlayerRankControls(props) {
       <div className={classes.controlTitle}>
         Normalization
         <IconButton {...{
-          ariaLabel: 'info',
+          'aria-label': 'info',
           color: 'inherit',
           size: 'small',
           onClick: handleOpenOverlay,

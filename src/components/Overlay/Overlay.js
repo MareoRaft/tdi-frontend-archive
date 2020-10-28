@@ -33,6 +33,7 @@ function Contents(props) {
     <h2>{props.title}</h2>
     {_.map(props.sectionDict, (description, title) =>
       <Section {...{
+        key: title,
         title,
         description,
       }}/>
