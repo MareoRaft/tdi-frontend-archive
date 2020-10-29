@@ -56,6 +56,14 @@ function PlayerRankControls(props) {
         values: gc.NORMALIZATION_TO_DISPLAY_NAME,
       }}/>
       <div className={classes.controlTitle}>
+        Filter Data
+      </div>
+      <MinimalSelect {...{
+        onChange: props.onChangeFilter,
+        value: props.filter,
+        values: gc.FILTER_TO_DISPLAY_NAME,
+      }}/>
+      <div className={classes.controlTitle}>
         Reverse Results
       </div>
       <MinimalSelect {...{
@@ -70,6 +78,14 @@ function PlayerRankControls(props) {
         onChange: props.onChangeLimit,
         value: props.limit,
         values: gc.LIMIT_VALUES,
+      }}/>
+      <div className={classes.controlTitle}>
+        Gender
+      </div>
+      <MinimalSelect {...{
+        onChange: props.onChangeGender,
+        value: props.gender,
+        values: gc.GENDER_TO_DISPLAY_NAME,
       }}/>
       <div className={classes.buttonTitle}>
         {/* this space intentionally blank */}
