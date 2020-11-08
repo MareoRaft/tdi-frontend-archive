@@ -5,7 +5,6 @@ This is the repo for my Tennis Capstone Project for The Data Incubator.  The act
 
 
 
-
 ## Business Objective
 
 Bring insightful tennis stats to tennis fans.
@@ -52,6 +51,25 @@ The above already describes the work done on the capstone, the tools used, and t
 
 ## Analysis and Results
 
-TODO: fill in this section.
-TODO: maybe add a pic at the top
+The statistics are calculated as follows:
+
+'Points won' is the number of points a player has won.  When normalized by percentage, it is divided by the number of points they have played.  'Service points won' is the number of points a player won when serving.  As a percentage, the denominator is the total number of service points they played.  'Aces' is the number of aces a player hit.  As a percentage, the denominator is the number of service points they played.  'Double faults' is the number of double faults the player had.  As a percentage, the denominator is the number of service points they played.
+
+'The GOAT algorithm' is the Google PageRank algorithm applied to the following graph definition:  Each player is represented by exactly 1 node.  If `A` and `B` are nodes, then the directed edge `(A, B)` has an integer weight which is the number of points that player A lost to player B.
+
+The 'time decay' normalization is the same as the percentage normalization with the following difference:  More recent points are weighted higher than points that happened a long time ago.  We use a 1-year half-life exponential decay function, so that a point that occurred 1 year ago is only worth half as much as a point that happened today.  In the 'percent' normalization, a single point contributes 1 to the denominator and either 1 or 0 to the numerator.  In the 'time decay' normalization, a single point that occured `y` years ago contributes `(1/2)^y` to the denominator and either `(1/2)^y` or `0` to the numerator.
+
+The following are some selected results from the analysis:
+
+stat: | aces
+---:|:---:
+normalization: | percent
+\#1 player: | Roger Federer
+
+
+
+
+
+
+
 
