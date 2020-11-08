@@ -10,7 +10,7 @@ This is the repo for my Tennis Capstone Project for The Data Incubator.  The rep
 
 Bring insightful tennis stats to tennis fans.
 
-Tennis is the 4th most popular sport in the world [1].  The objective is to bring valuable information and insights about professional tennis players to tennis fans.
+Tennis is the 4th most popular sport in the world [[1]](https://www.totalsportek.com/most-popular-sports/).  The objective is to bring valuable information and insights about professional tennis players to tennis fans.
 
 Information is valuable.  We will provide both data and predictions to people through interactive visualizations.  In addition to tennis hobbyists, people who gamble on tennis would find the info particularly beneficial.  Professional tennis players themselves would find the info helpful in developing potential weaknesses to improve or exploit.
 
@@ -59,7 +59,7 @@ this is [^fn]
 
 
 
-[1] https://www.totalsportek.com/most-popular-sports/
+[1]
 [2] https://github.com/JeffSackmann/tennis_wta
 [3] https://github.com/JeffSackmann/tennis_atp
 [4] https://github.com/JeffSackmann/tennis_MatchChartingProject
