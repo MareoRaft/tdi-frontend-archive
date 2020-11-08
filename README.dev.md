@@ -1,3 +1,7 @@
+# Dev README
+This is the repo for the **frontend** of the Tennis Capstone Project for TDI (The Data Incubator).  The repo for the [**backend** is here](https://github.com/MareoRaft/tennis-backend-tdi).  The actual [deployed app is here](https://tennis-frontend-tdi.herokuapp.com).
+
+
 ## Docker dev
 
     docker build -t mvlancellotti/tennis-frontend:dev -f dev.Dockerfile . &&
@@ -13,8 +17,6 @@
 See <https://mherman.org/blog/dockerizing-a-react-app/> for more, and a prod example.
 
 
-# About
-This is the repo for the **frontend** of the Tennis Capstone Project for TDI (The Data Incubator).  The repo for the [**backend** is here](https://github.com/MareoRaft/tennis-backend-tdi).  The actual [deployed app is here](https://tennis-frontend-tdi.herokuapp.com).
 
 
 ## Run

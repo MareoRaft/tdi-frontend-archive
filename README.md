@@ -1,9 +1,12 @@
-How My Capstone Satisfies the Requirements
-==============================================
+# Tennis Capstone Project
+
+This is the repo for my Tennis Capstone Project for The Data Incubator.  The repo for the [**backend** is here](https://github.com/MareoRaft/tennis-backend).  The actual [deployed web app is here](http://162.243.168.182:5001/).  Please go to the [developer README](https://github.com/MareoRaft/tennis-frontend-tdi/blob/master/README.dev.md) if you want to actually develop or deploy the app.  Read on for an in-depth description of the project.
 
 
 
-1. Business Objective.
+
+
+## Business Objective
 
 Bring insightful tennis stats to tennis fans.
 
@@ -15,7 +18,7 @@ The [web app](http://162.243.168.182:5001/) could be monetized by offering basic
 
 
 
-2. Data Ingestion.
+## Data Ingestion
 
 Data will be combined, processed, and updated periodically.
 
@@ -27,13 +30,13 @@ The ingestion pipeline is fully automated (it is enough to run [this function](h
 
 
 
-3. Visualizations.
+## Visualizations
 
 The project contains a bar chart which is used for both the stats-comparisons and the PageRank comparison.  There exist 6 controls for interacting with the data as well as the zoom-interactivity of the amChart itself.  You can view it [here](http://162.243.168.182:5001/).
 
 
 
-4. Interactive Website.
+## Interactive Website
 
 Users interact with the project via a website.  Users explore the data by choosing a (1) statistic, (2) normalization, (3) gender, and some other options.  Users can click on info buttons to get explanations of the various choices and methods used to compute the data.  Users can click and drag on the chart to see cross sections of the view.
 
@@ -41,16 +44,18 @@ The user interactivity is client-side, and the client will make calls to the ser
 
 
 
-5. Deliverable.
+## Deliverable
 
 The above already describes the work done on the capstone, the tools used, and the data ingestion; but not the analysis and results.  I will include those below.  The deliverable is this very [repository](https://github.com/MareoRaft/tennis-frontend-tdi) and this very README.md file.  Point 3 includes a link to the visualizations.
 
 
 
-6. Analysis and Results.
+## Analysis and Results
 
 TODO: fill in this section.
-TODO: move this file to README.md in the frontend repo.
+TODO: make the readme prettier.
+
+this is [^fn]
 
 
 
@@ -60,3 +65,5 @@ TODO: move this file to README.md in the frontend repo.
 [4] https://github.com/JeffSackmann/tennis_MatchChartingProject
 [5] https://github.com/JeffSackmann/tennis_slam_pointbypoint
 [6] https://github.com/JeffSackmann/tennis_pointbypoint
+[^fn] test me
+
