@@ -1,6 +1,6 @@
 # Tennis Capstone Project
 
-This is the repo for my Tennis Capstone Project for The Data Incubator.  The repo for the [**backend** is here](https://github.com/MareoRaft/tennis-backend).  The actual [deployed web app is here](http://162.243.168.182:5001/).  Please go to the [developer README](https://github.com/MareoRaft/tennis-frontend-tdi/blob/master/README.dev.md) if you want to actually develop or deploy the app.  Read on for an in-depth description of the project.
+This is the repo for my Tennis Capstone Project for The Data Incubator.  The actual [**deployed web app** is here](http://162.243.168.182:5001/).  The repo for the [backend is here](https://github.com/MareoRaft/tennis-backend).    Please go to the [developer README](https://github.com/MareoRaft/tennis-frontend-tdi/blob/master/README.dev.md) if you want to actually develop or deploy the app.  Read on for an in-depth description of the project.
 
 
 
@@ -10,7 +10,7 @@ This is the repo for my Tennis Capstone Project for The Data Incubator.  The rep
 
 Bring insightful tennis stats to tennis fans.
 
-Tennis is the 4th most popular sport in the world [[1]](https://www.totalsportek.com/most-popular-sports/).  The objective is to bring valuable information and insights about professional tennis players to tennis fans.
+Tennis is the 4th most popular sport in the world [[1]](https://www.totalsportek.com/most-popular-sports/).  The objective is to bring valuable information and insights about professional players to fans.
 
 Information is valuable.  We will provide both data and predictions to people through interactive visualizations.  In addition to tennis hobbyists, people who gamble on tennis would find the info particularly beneficial.  Professional tennis players themselves would find the info helpful in developing potential weaknesses to improve or exploit.
 
@@ -24,7 +24,7 @@ Data will be combined, processed, and updated periodically.
 
 The data comes from two CSV files that are posted at [[2]](https://github.com/JeffSackmann/tennis_MatchChartingProject).  I plan to add match-level stats in the future which will require additional data from [[2]](https://github.com/JeffSackmann/tennis_MatchChartingProject), [[3]](https://github.com/JeffSackmann/tennis_wta), [[4]](https://github.com/JeffSackmann/tennis_atp), [[5]](https://github.com/JeffSackmann/tennis_slam_pointbypoint), or [[6]](https://github.com/JeffSackmann/tennis_pointbypoint).
 
-The data is loaded with pandas, widdled down, combined, and processed into the information we need.  In particular, text-splitting and regular expressions are used to pull player info out of 1 column [here](https://github.com/MareoRaft/tennis-backend/blob/master/data_ingestion/ingest_points.py#L31); maps are used to create new columns from existing column combinations; and then data is aggregated per-player [here](https://github.com/MareoRaft/tennis-backend/blob/master/analysis/stat.py#L9).  For the PageRank algorithm (see [here](https://github.com/MareoRaft/tennis-backend/blob/master/analysis/pagerank.py)), point result information is aggregated per player-pair and a weighted directed graph is created.  Networkx then computes the pagerank.
+The data is loaded with pandas, widdled down, combined, and processed into the information we need.  In particular, text-splitting and regular expressions are used to pull player info out of 1 column [here](https://github.com/MareoRaft/tennis-backend/blob/master/data_ingestion/ingest_points.py#L31); maps are used to create new columns from existing column combinations; and then data is aggregated per-player [here](https://github.com/MareoRaft/tennis-backend/blob/master/analysis/stat.py#L9).  For the [PageRank](https://en.wikipedia.org/wiki/PageRank) algorithm (see code [here](https://github.com/MareoRaft/tennis-backend/blob/master/analysis/pagerank.py)), point result information is aggregated per player-pair and a weighted directed graph is created.  Networkx then computes the pagerank.
 
 The ingestion pipeline is fully automated (it is enough to run [this function](https://github.com/MareoRaft/tennis-backend/blob/master/data_ingestion/ingest_points.py#L82)) and I plan to rerun it periodically on the latest-and-greatest professional tennis data (the source data is updated every few months).
 
@@ -53,5 +53,5 @@ The above already describes the work done on the capstone, the tools used, and t
 ## Analysis and Results
 
 TODO: fill in this section.
-TODO: make the readme prettier.
+TODO: maybe add a pic at the top
 
