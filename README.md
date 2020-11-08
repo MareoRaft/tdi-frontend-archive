@@ -53,7 +53,7 @@ The above already describes the work done on the capstone, the tools used, and t
 
 The statistics are calculated as follows:
 
-'**Points won**' is the number of points a player has won.  When normalized by percentage, it is divided by the number of points they have played.  **Service points won** is the number of points a player won when serving.  As a percentage, the denominator is the total number of service points they played.  **Aces** is the number of aces a player hit.  As a percentage, the denominator is the number of service points they played.  **Double faults** is the number of double faults the player had.  As a percentage, the denominator is the number of service points they played.
+"**Points won**" is the number of points a player has won.  When normalized by percentage, it is divided by the number of points they have played.  **Service points won** is the number of points a player won when serving.  As a percentage, the denominator is the total number of service points they played.  **Aces** is the number of aces a player hit.  As a percentage, the denominator is the number of service points they played.  **Double faults** is the number of double faults the player had.  As a percentage, the denominator is the number of service points they played.
 
 **The GOAT algorithm** is the Google PageRank algorithm applied to the following graph definition:  Each player is represented by exactly 1 node.  If `A` and `B` are nodes, then the directed edge `(A, B)` has an integer weight which is the number of points that player A lost to player B.
 
@@ -64,9 +64,9 @@ The following are some selected results from the analysis:
 stat: | aces | double-faults | points-won | The GOAT Algorithm
 ---:|---:|---:|---:|---:
 normalization: | percent | percent | percent | raw count
-\#1 player: | Ivo Karlovic 13.5% |  Goran Ivanisevic 4.1% | Evgeny Donskoy 55.7% | Roger Federer 4.5%
-\#2 player: | Goran Ivanisevic 9.7% | Noah Rubin 4.0% | Thomas Muster 54.6% | Rafael Nadal 3.1%
-\#3 player: | John Isner 9.7% | Matthew Ebden 4.0% | Igor Sijsling 54.5% | Novak Djokovic 2.7%
+`#1` player: | Ivo Karlovic `13.5%` |  Goran Ivanisevic `4.1%` | Evgeny Donskoy `55.7%` | Roger Federer `4.5%`
+`#2` player: | Goran Ivanisevic `9.7%` | Noah Rubin `4.0%` | Thomas Muster `54.6%` | Rafael Nadal `3.1%`
+`#3` player: | John Isner `9.7%` | Matthew Ebden `4.0%` | Igor Sijsling `54.5%` | Novak Djokovic `2.7%`
 
 
 
