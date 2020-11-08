@@ -22,7 +22,7 @@ The [web app](http://162.243.168.182:5001/) could be monetized by offering basic
 
 Data will be combined, processed, and updated periodically.
 
-The data comes from two CSV files that are posted at [4].  I plan to add match-level stats in the future which will require additional data from [4], [2], [3], [5], or [6].
+The data comes from two CSV files that are posted at [[2]](https://github.com/JeffSackmann/tennis_MatchChartingProject).  I plan to add match-level stats in the future which will require additional data from [[2]](https://github.com/JeffSackmann/tennis_MatchChartingProject), [[3]](https://github.com/JeffSackmann/tennis_wta), [[4]](https://github.com/JeffSackmann/tennis_atp), [[5]](https://github.com/JeffSackmann/tennis_slam_pointbypoint), or [[6]](https://github.com/JeffSackmann/tennis_pointbypoint).
 
 The data is loaded with pandas, widdled down, combined, and processed into the information we need.  In particular, text-splitting and regular expressions are used to pull player info out of 1 column [here](https://github.com/MareoRaft/tennis-backend/blob/master/data_ingestion/ingest_points.py#L31); maps are used to create new columns from existing column combinations; and then data is aggregated per-player [here](https://github.com/MareoRaft/tennis-backend/blob/master/analysis/stat.py#L9).  For the PageRank algorithm (see [here](https://github.com/MareoRaft/tennis-backend/blob/master/analysis/pagerank.py)), point result information is aggregated per player-pair and a weighted directed graph is created.  Networkx then computes the pagerank.
 
@@ -54,16 +54,4 @@ The above already describes the work done on the capstone, the tools used, and t
 
 TODO: fill in this section.
 TODO: make the readme prettier.
-
-this is [^fn]
-
-
-
-[1]
-[2] https://github.com/JeffSackmann/tennis_wta
-[3] https://github.com/JeffSackmann/tennis_atp
-[4] https://github.com/JeffSackmann/tennis_MatchChartingProject
-[5] https://github.com/JeffSackmann/tennis_slam_pointbypoint
-[6] https://github.com/JeffSackmann/tennis_pointbypoint
-[^fn] test me
 
