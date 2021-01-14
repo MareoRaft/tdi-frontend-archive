@@ -38,7 +38,7 @@ function PlayerRank() {
   }
   const fetchData = React.useCallback(async () => {
     // update data
-    const url = new URL(process.env['REACT_APP_BACKEND_URL'])
+    const url = new URL(process.env['REACT_APP_BACKEND_URL'] + 'data')
     const params = {gender, stat, normalization, reverse, limit}
     url.search = new URLSearchParams(params).toString()
     const response = await fetch(url)

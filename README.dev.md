@@ -1,3 +1,5 @@
+this entire repo is less than 500 MB
+
 # Dev README
 This is the repo for the **frontend** of the Tennis Capstone Project for TDI (The Data Incubator).  The repo for the [**backend** is here](https://github.com/MareoRaft/tennis-backend-tdi).  The actual [deployed app is here](https://tennis-frontend-tdi.herokuapp.com).
 
